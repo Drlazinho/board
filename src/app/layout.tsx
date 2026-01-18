@@ -24,14 +24,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className="bg-navy-950 text-navy-50 antialiased">
         <ReactQueryProvider>
-          <NuqsAdapter>{children}</NuqsAdapter>
+          <NuqsAdapter>{modal}{children}</NuqsAdapter>
         </ReactQueryProvider>
       </body>
     </html>
